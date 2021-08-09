@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import {BrowserRouter,Route} from "react-router-dom";
 import './App.css';
-
-function App() {
+import Head from './components/head/head.jsx';
+import Navb from './components/navb/navb.jsx';
+import Game from './components/game/game.jsx';
+//import Profile from './components/profile/profile.jsx';
+//import Operations from './components/operations/operations.jsx';
+//import Angime from './components/angime/angime.jsx';
+import Footer from './components/footer/footer.jsx';
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div className='ap-wrapper' >
+      <Head/>
+      <Navb
+      del={props.del} />
+
+      <div className='ap-w-content'>
+       <Game/>
+      </div>
+      <Footer/>
     </div>
+    </BrowserRouter>
   );
 }
 

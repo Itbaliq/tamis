@@ -1,0 +1,16 @@
+
+.navb{
+  grid-area: n;
+  background-color: gray;
+  border-width: 5px;
+  border-style: solid;
+  border-color: darkgrey;
+}
+.item a {
+  color:white;
+  text-decoration:none;
+}
+
+.item a.activeLink {
+  color: gold;
+}

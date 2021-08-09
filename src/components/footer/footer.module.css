@@ -1,0 +1,10 @@
+
+.footer{
+  background-color: gray;
+  grid-area: f;
+  color:white;
+  border-width: 5px;
+  border-style: solid;
+  border-color: darkgrey;
+  height: 100px;
+}

@@ -1,10 +1,10 @@
 
 .navb{
-  grid-area: n;
   background-color: gray;
-  border-width: 5px;
+  border-color: 'transparent';
+  grid-area: n;
+  border-width: 1;
   border-style: solid;
-  border-color: darkgrey;
 }
 .item a {
   color:white;

@@ -1,4 +1,5 @@
 .ap-wrapper {
+  height: auto;
   margin: 0 auto;
   display: grid;
   width: 80%;
@@ -15,9 +16,9 @@
 
 .ap-w-content{
   grid-area: c;
-  background-color: white;
-  border-width: 5px;
+  background-color: whitesmoke;
+  border-color: 'transparent';
+  border-width: 1;
   border-style: solid;
-  border-color: darkgray;
-  height: 300px;
+  height: auto;
 }

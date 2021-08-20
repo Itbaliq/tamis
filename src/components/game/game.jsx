@@ -1,48 +1,6 @@
 import React from 'react';
+import Board from './board/board.jsx';
 import g from './game.module.css';
-
-function Square(props) {
-  return (
-    <button className={g.box} onClick={props.onClick}>
-      {props.value}
-    </button>
-  );
-}
-
-class Board extends React.Component {
-  renderSquare(i) {
-    return (
-      <Square
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
-    );
-  }
-
-  render() {
-    return (
-      <div >
-        <div>
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div>
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div >
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
-  }
-}
-
-
 
 function calculateWinner(squares) {
   const lines = [
@@ -63,6 +21,7 @@ function calculateWinner(squares) {
   }
   return null;
 }
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -107,28 +66,35 @@ class Game extends React.Component {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
-
+    var draw=false;
     const moves = history.map((step, move) => {
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
+        if(move==9){
+          draw = true;
+        }
       return (
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
-
     let status;
     if (winner) {
       status = "Winner: " + winner;
-    } else {
+    } 
+  else {
+    if(draw){
+      status = "Draw";
+    }
+    else
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
 
     return (
       <div className={g.game}>
-        <div className="game-board">
+        <div className={g.block}>
           <Board
             squares={current.squares}
             onClick={i => this.handleClick(i)}
@@ -142,4 +108,5 @@ class Game extends React.Component {
     );
   }
 }
+
 export default Game

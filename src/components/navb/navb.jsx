@@ -6,7 +6,7 @@ const Navb =(props) =>{
   return    (
     <nav className={b.navb}>
       <div className={`${b.item} ${b.activeLink}`}>
-        <NavLink to="/game" activeClassName={b.activeLink}>Game</NavLink>
+        <NavLink to="/game" activeClassName={b.activeLink}>Tic tac toe</NavLink>
       </div>
     </nav>)
 }
